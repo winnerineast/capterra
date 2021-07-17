@@ -16,3 +16,8 @@ this is project to create a clone database of capterra website.
     * No overridden for review data and only appending
     
 - (incoming) a local website to read local database
+
+## Work Daily
+- 2021.07.17
+completed create_database.py and simple webpage download and interpretation. now it's going to develop download webpage 
+  and insert them into database (so far don't do existing data detection)

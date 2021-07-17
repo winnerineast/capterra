@@ -2,10 +2,20 @@ import requests
 import urllib3
 from bs4 import BeautifulSoup
 import json
+import mysql.connector
+from mysql.connector import errorcode
 
 
-def start_requests(url):
-    r = requests.get(url)
+config = dict(user='root',
+              password='1',
+              host='127.0.0.1',
+              database='capterra',
+              raise_on_warnings=True,
+              use_pure=True)
+
+
+def start_requests(input_url):
+    r = requests.get(input_url)
     return r.content
 
 
@@ -67,6 +77,7 @@ def get_page_number(html_text):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
     with open('data.json', 'w', encoding='utf-8') as f:
         url = 'https://www.capterra.com.sg/directory'
         text = start_requests(url)
